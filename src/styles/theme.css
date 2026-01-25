@@ -1,21 +1,21 @@
 @theme {
     /* Brand */
-    --color-purple-base: #892CCD;
-    --color-purple-light: #A85FDD;
+    --color-purple-base: #892ccd;
+    --color-purple-light: #a85fdd;
 
     /* Gray Scale */
-    --color-gray-100: #0F0F1A;
+    --color-gray-100: #0f0f1a;
     --color-gray-200: #131320;
-    --color-gray-300: #1A1B2D;
-    --color-gray-400: #45455F;
-    --color-gray-500: #7A7B9F;
-    --color-gray-600: #B5B6C9;
-    --color-gray-700: #E4E5EC;
-    --color-white: #FFFFFF;
+    --color-gray-300: #1a1b2d;
+    --color-gray-400: #45455f;
+    --color-gray-500: #7a7b9f;
+    --color-gray-600: #b5b6c9;
+    --color-gray-700: #e4e5ec;
+    --color-white: #ffffff;
 
     /* Feedback */
-    --color-error-base: #D04048;
-    --color-error-light: #F77980;
+    --color-error-base: #d04048;
+    --color-error-light: #f77980;
 
     /* Font families */
     --font-nunito-sans: "Nunito Sans", sans-serif;
