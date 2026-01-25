@@ -1,3 +1,12 @@
+import { BrowserRouter } from "react-router-dom"
+import { Header } from "./components/Header"
+import { Router } from "./router"
+
 export function App() {
-    return <h1>Hello World!</h1>
+    return (
+        <BrowserRouter>
+            <Header />
+            <Router />
+        </BrowserRouter>
+    )
 }

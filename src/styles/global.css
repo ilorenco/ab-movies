@@ -3,6 +3,6 @@
 
 @layer base {
     body {
-        @apply font-nunito-sans;
+        @apply font-nunito-sans bg-gray-100;
     }
 }
