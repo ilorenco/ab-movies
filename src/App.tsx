@@ -5,7 +5,6 @@ import { Router } from "./router"
 export function App() {
     return (
         <BrowserRouter>
-            <Header />
             <Router />
         </BrowserRouter>
     )

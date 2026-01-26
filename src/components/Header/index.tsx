@@ -2,7 +2,7 @@ import { LineVerticalIcon, PopcornIcon } from "@phosphor-icons/react"
 import { FilmSlateIcon } from "@phosphor-icons/react"
 import { MenuItem } from "./components/menu-item"
 import { IconButton } from "../icon-button"
-import Avatar from "../../assets/avatar.svg"
+import Avatar from "../../assets/images/avatar.svg"
 
 export function Header() {
     return (
