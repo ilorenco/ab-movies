@@ -15,10 +15,6 @@ export function Home() {
                 <MovieCard />
                 <MovieCard />
                 <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
             </section>
         </>
     )

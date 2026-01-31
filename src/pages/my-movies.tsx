@@ -1,20 +1,24 @@
-import { MovieCard } from "../components/movie-card"
 import { Input } from "../components/input"
-import { MagnifyingGlassIcon } from "@phosphor-icons/react"
+import { MagnifyingGlassIcon, PlusIcon } from "@phosphor-icons/react"
+import { EmptyState } from "../components/empty-state"
+import { Button } from "../components/button"
 
 export function MyMovies() {
     return (
         <>
             <header className="flex items-center justify-between pb-20">
                 <h1 className="font-rammetto-one text-2xl text-[#E5E2E9]">Meus Filmes</h1>
-                <Input placeholder="Buscar" icon={<MagnifyingGlassIcon />} />
+
+                <div className="flex items-center gap-4">
+                    <Input placeholder="Buscar" icon={<MagnifyingGlassIcon />} />
+                    <Button>
+                        <PlusIcon size={20} weight="bold" />
+                        Novo
+                    </Button>
+                </div>
             </header>
 
-            <section className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-            </section>
+            <EmptyState />
         </>
     )
 }
