@@ -6,7 +6,7 @@ import Avatar from "../../assets/images/avatar.svg"
 
 export function Header() {
     return (
-        <header className="grid grid-cols-3 items-center px-6 py-4">
+        <header className="grid grid-cols-3 items-center border-b border-gray-200 px-6 py-4">
             <div className="flex items-center">
                 <a href="/" aria-label="Página inicial">
                     <img src="/logo.svg" alt="Logo" className="h-12 w-12" />
