@@ -1,9 +1,11 @@
+"use client"
+
 import { EnvelopeIcon, PasswordIcon, UserIcon } from "@phosphor-icons/react"
 import { useForm, useWatch } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
-import { Input } from "../components/input"
-import { Button } from "../components/button"
+import { Input } from "@/components/input"
+import { Button } from "@/components/button"
 
 const registerSchema = z.object({
     name: z.string().min(1, "Nome é obrigatório").min(3, "Nome deve ter pelo menos 3 caracteres"),
@@ -16,7 +18,7 @@ const registerSchema = z.object({
 
 type RegisterForm = z.infer<typeof registerSchema>
 
-export function Register() {
+export default function Register() {
     const {
         register,
         handleSubmit,

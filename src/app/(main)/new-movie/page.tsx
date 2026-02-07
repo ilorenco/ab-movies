@@ -1,9 +1,11 @@
-import { CalendarBlankIcon, FilmSlateIcon, TagIcon, UploadSimpleIcon } from "@phosphor-icons/react"
-import { Input } from "../components/input"
-import { TextArea } from "../components/text-area"
-import { Button } from "../components/button"
+"use client"
 
-export function NewMovie() {
+import { CalendarBlankIcon, FilmSlateIcon, TagIcon, UploadSimpleIcon } from "@phosphor-icons/react"
+import { Input } from "@/components/input"
+import { TextArea } from "@/components/text-area"
+import { Button } from "@/components/button"
+
+export default function NewMovie() {
     return (
         <div className="mx-auto flex max-w-[1070px] flex-col gap-8 px-6 py-10 lg:flex-row lg:gap-12">
             <div className="flex h-[300px] w-full shrink-0 flex-col items-center justify-center gap-3 rounded-[18px] bg-gray-300 lg:h-[490px] lg:w-[381px]">

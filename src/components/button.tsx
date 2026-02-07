@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "../lib/utils"
+import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
     "flex w-full items-center justify-center gap-2 rounded-md px-5 py-3.5 font-bold transition-colors hover:cursor-pointer disabled:opacity-50 disabled:pointer-events-none",

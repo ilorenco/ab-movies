@@ -1,3 +1,5 @@
+"use client"
+
 import { XCircleIcon, WarningIcon } from "@phosphor-icons/react"
 import { forwardRef, type ComponentProps } from "react"
 

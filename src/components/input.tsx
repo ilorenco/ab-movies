@@ -1,3 +1,5 @@
+"use client"
+
 import { XCircleIcon, WarningIcon } from "@phosphor-icons/react"
 import {
     forwardRef,
@@ -7,7 +9,7 @@ import {
     type ReactNode,
     type ReactElement
 } from "react"
-import { cn } from "../lib/utils"
+import { cn } from "@/lib/utils"
 
 interface InputProps extends ComponentProps<"input"> {
     icon?: ReactNode

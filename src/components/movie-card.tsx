@@ -1,13 +1,17 @@
+"use client"
+
 import { StarIcon } from "@phosphor-icons/react"
-import coverImage from "../assets/images/Cover.svg"
+import Image from "next/image"
+import coverImage from "@/assets/images/Cover.svg"
 
 export function MovieCard() {
     return (
         <article className="group relative aspect-7/10 w-full cursor-pointer overflow-hidden rounded-xl">
-            <img
+            <Image
                 src={coverImage}
                 alt="Capa do filme Meu malvado favorito 4"
                 className="absolute inset-0 h-full w-full object-cover"
+                fill
             />
 
             <div

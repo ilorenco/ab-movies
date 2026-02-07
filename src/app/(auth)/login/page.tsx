@@ -1,9 +1,11 @@
+"use client"
+
 import { EnvelopeIcon, PasswordIcon } from "@phosphor-icons/react"
 import { useForm, useWatch } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
-import { Input } from "../components/input"
-import { Button } from "../components/button"
+import { Input } from "@/components/input"
+import { Button } from "@/components/button"
 
 const loginSchema = z.object({
     email: z.string().min(1, "E-mail é obrigatório").email("E-mail inválido"),
@@ -15,7 +17,7 @@ const loginSchema = z.object({
 
 type LoginForm = z.infer<typeof loginSchema>
 
-export function Login() {
+export default function Login() {
     const {
         register,
         handleSubmit,

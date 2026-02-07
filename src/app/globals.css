@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @theme {
     /* Brand */
     --color-purple-base: #892ccd;
@@ -21,4 +23,10 @@
     --font-nunito-sans: "Nunito Sans", sans-serif;
     --font-rajdhani: "Rajdhani", sans-serif;
     --font-rammetto-one: "Rammetto One", cursive;
+}
+
+@layer base {
+    body {
+        @apply font-nunito-sans bg-gray-100;
+    }
 }

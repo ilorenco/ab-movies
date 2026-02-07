@@ -1,11 +1,13 @@
-import { Input } from "../components/input"
-import { MagnifyingGlassIcon, PlusIcon } from "@phosphor-icons/react"
-import { EmptyState } from "../components/empty-state"
-import { Button } from "../components/button"
-import { useNavigate } from "react-router-dom"
+"use client"
 
-export function MyMovies() {
-    const navigate = useNavigate()
+import { Input } from "@/components/input"
+import { MagnifyingGlassIcon, PlusIcon } from "@phosphor-icons/react"
+import { EmptyState } from "@/components/empty-state"
+import { Button } from "@/components/button"
+import { useRouter } from "next/navigation"
+
+export default function MyMovies() {
+    const router = useRouter()
 
     return (
         <>
@@ -14,7 +16,7 @@ export function MyMovies() {
 
                 <div className="flex items-center gap-4">
                     <Input placeholder="Buscar" icon={<MagnifyingGlassIcon />} />
-                    <Button onClick={() => navigate("/new-movie")}>
+                    <Button onClick={() => router.push("/new-movie")}>
                         <PlusIcon size={20} weight="bold" />
                         Novo
                     </Button>

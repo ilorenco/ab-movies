@@ -1,16 +1,20 @@
+"use client"
+
 import { LineVerticalIcon, PopcornIcon } from "@phosphor-icons/react"
 import { FilmSlateIcon } from "@phosphor-icons/react"
 import { MenuItem } from "./components/menu-item"
 import { IconButton } from "../icon-button"
-import Avatar from "../../assets/images/avatar.svg"
+import Link from "next/link"
+import Image from "next/image"
+import Avatar from "@/assets/images/avatar.svg"
 
 export function Header() {
     return (
         <header className="grid grid-cols-3 items-center border-b border-gray-200 px-6 py-4">
             <div className="flex items-center">
-                <a href="/" aria-label="Página inicial">
-                    <img src="/logo.svg" alt="Logo" className="h-12 w-12" />
-                </a>
+                <Link href="/" aria-label="Página inicial">
+                    <Image src="/logo.svg" alt="Logo" width={48} height={48} />
+                </Link>
             </div>
 
             <nav className="justify-self-center" aria-label="Menu principal">
@@ -24,7 +28,7 @@ export function Header() {
                 <div className="flex items-center gap-3">
                     <span className="text-sm text-gray-600">Olá, João</span>
                     <figure className="m-0 h-8 w-8 overflow-hidden rounded-md">
-                        <img src={Avatar} alt="Avatar do usuário" />
+                        <Image src={Avatar} alt="Avatar do usuário" width={32} height={32} />
                     </figure>
                 </div>
                 <span aria-hidden="true">

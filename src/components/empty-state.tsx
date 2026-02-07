@@ -1,3 +1,5 @@
+"use client"
+
 import { FilmSlateIcon, XIcon } from "@phosphor-icons/react"
 
 export function EmptyState() {

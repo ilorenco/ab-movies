@@ -1,8 +1,10 @@
-import { MovieCard } from "../components/movie-card"
-import { Input } from "../components/input"
+"use client"
+
+import { MovieCard } from "@/components/movie-card"
+import { Input } from "@/components/input"
 import { MagnifyingGlassIcon } from "@phosphor-icons/react"
 
-export function Home() {
+export default function Home() {
     return (
         <>
             <header className="flex items-center justify-between pb-20">
