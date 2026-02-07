@@ -1,53 +1,40 @@
 import { XCircleIcon, WarningIcon } from "@phosphor-icons/react"
-import {
-    forwardRef,
-    cloneElement,
-    isValidElement,
-    type ComponentProps,
-    type ReactNode,
-    type ReactElement
-} from "react"
-import { cn } from "../lib/utils"
+import { forwardRef, type ComponentProps } from "react"
 
-interface InputProps extends ComponentProps<"input"> {
-    icon?: ReactNode
+interface TextAreaProps extends ComponentProps<"textarea"> {
     error?: string
     onClear?: () => void
-    wrapperClassName?: string
+    label?: string
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-    ({ icon, error, onClear, id, value, wrapperClassName, ...props }, ref) => {
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
+    ({ error, onClear, id, value, label, ...props }, ref) => {
         const hasError = !!error
         const hasValue = !!value
 
-        const iconColor = hasError
-            ? "var(--color-error-base)"
-            : hasValue
-              ? "var(--color-purple-light)"
-              : "var(--color-gray-500)"
-        const styledIcon = isValidElement(icon)
-            ? cloneElement(icon as ReactElement<{ color?: string }>, { color: iconColor })
-            : icon
-
         return (
-            <fieldset className={cn("flex flex-col gap-2", wrapperClassName)}>
-                <label htmlFor={id} className="sr-only">
-                    {props.placeholder}
-                </label>
-                <div className="focus-within:border-purple-base flex items-center gap-2 rounded-md border border-gray-300 px-4 py-3 text-gray-700">
-                    {styledIcon && (
-                        <span className="shrink-0" aria-hidden="true">
-                            {styledIcon}
-                        </span>
-                    )}
-                    <input
+            <fieldset className="flex flex-col gap-2">
+                {label && (
+                    <label
+                        htmlFor={id}
+                        className="font-nunito-sans text-sm font-semibold text-gray-600"
+                    >
+                        {label}
+                    </label>
+                )}
+                {!label && (
+                    <label htmlFor={id} className="sr-only">
+                        {props.placeholder}
+                    </label>
+                )}
+                <div className="focus-within:border-purple-base relative flex flex-col gap-2 rounded-md border border-gray-300 px-4 py-3 text-gray-700">
+                    <textarea
                         ref={ref}
                         id={id}
                         value={value}
                         aria-invalid={hasError}
                         aria-describedby={hasError ? `${id}-error` : undefined}
-                        className="min-w-0 flex-1 border-0 bg-transparent placeholder:text-gray-500 focus:outline-none"
+                        className="min-h-[176px] resize-none border-0 bg-transparent placeholder:text-gray-500 focus:outline-none"
                         {...props}
                     />
                     {hasValue && onClear && (
@@ -55,7 +42,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                             type="button"
                             aria-label={`Limpar campo ${props.placeholder?.toLowerCase()}`}
                             onClick={onClear}
-                            className="shrink-0 cursor-pointer"
+                            className="absolute top-3 right-3 shrink-0 cursor-pointer"
                         >
                             <XCircleIcon
                                 width={20}
@@ -73,7 +60,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                             width={20}
                             height={20}
                             color="var(--color-error-light)"
-                            className="hover shrink-0"
+                            className="shrink-0"
                             aria-hidden="true"
                         />
                         <span className="text-error-light text-[12px]">{error}</span>
