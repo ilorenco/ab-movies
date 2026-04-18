@@ -2,12 +2,15 @@
 
 import Image from "next/image"
 import { MovieCard } from "@/components/movie-card"
-import { ArrowLeftIcon, StarIcon } from "@phosphor-icons/react"
+import { ArrowLeftIcon, PopcornIcon, StarIcon } from "@phosphor-icons/react"
 import { Button } from "@/components/button"
 import { ReviewCard } from "@/components/review-card"
+import { EmptyState } from "@/components/empty-state"
 import coverImage from "@/assets/images/Cover.svg"
 
 export default function MovieDetails() {
+    const hasReviews = false
+
     return (
         <div className="flex flex-col gap-8 lg:gap-12">
             <div className="relative -mx-20 -mt-16">
@@ -126,9 +129,40 @@ export default function MovieDetails() {
                         </Button>
                     </div>
                     <div className="flex flex-col gap-3">
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
+                        {hasReviews ? (
+                            <>
+                            <ReviewCard />
+                            <ReviewCard />
+                            </>
+                        ) : (
+                            <EmptyState
+                                icon={
+                                    <PopcornIcon
+                                        width={45}
+                                        height={45}
+                                        color="var(--color-gray-400)"
+                                        aria-hidden="true"
+                                    />
+                                }
+                                message={
+                                    <>
+                                        Nenhuma avaliação registrada.
+                                        <br />
+                                        Que tal enviar o primeiro comentário?
+                                    </>
+                                }
+                                action={
+                                    <Button variant="ghost" className="w-auto">
+                                        <StarIcon
+                                            size={20}
+                                            color="var(--color-gray-500)"
+                                            aria-hidden="true"
+                                        />
+                                        Avaliar filme
+                                    </Button>
+                                }
+                            />
+                        )}
                     </div>
                 </section>
             </div>

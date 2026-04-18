@@ -1,41 +1,25 @@
 "use client"
 
-import { FilmSlateIcon, XIcon } from "@phosphor-icons/react"
+import type { ReactNode } from "react"
 
-export function EmptyState() {
+interface EmptyStateProps {
+    icon: ReactNode
+    message: ReactNode
+    action?: ReactNode
+}
+
+export function EmptyState({ icon, message, action }: EmptyStateProps) {
     return (
         <section
             className="flex flex-col items-center justify-center gap-5 py-20"
             role="status"
             aria-live="polite"
         >
-            <FilmSlateIcon
-                width={45}
-                height={45}
-                color="var(--color-gray-400)"
-                aria-hidden="true"
-            />
+            {icon}
 
-            <p className="font-nunito-sans text-center text-base text-gray-600">
-                Nenhum filme encontrado com <strong>"Filme ABC"</strong>
-                <br />
-                Que tal tentar outra busca?
-            </p>
+            <p className="font-nunito-sans text-center text-base text-gray-600">{message}</p>
 
-            <button
-                type="button"
-                aria-label="Limpar termo de busca"
-                className="flex items-center gap-2 transition-opacity hover:opacity-70"
-            >
-                <XIcon
-                    width={20}
-                    height={20}
-                    color="var(--color-gray-500)"
-                    weight="bold"
-                    aria-hidden="true"
-                />
-                <span className="font-nunito-sans text-base text-gray-500">Limpar busca</span>
-            </button>
+            {action}
         </section>
     )
 }

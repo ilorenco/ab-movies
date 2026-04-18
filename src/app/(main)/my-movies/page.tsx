@@ -1,7 +1,7 @@
 "use client"
 
 import { Input } from "@/components/input"
-import { MagnifyingGlassIcon, PlusIcon } from "@phosphor-icons/react"
+import { FilmSlateIcon, MagnifyingGlassIcon, PlusIcon, XIcon } from "@phosphor-icons/react"
 import { EmptyState } from "@/components/empty-state"
 import { Button } from "@/components/button"
 import { useRouter } from "next/navigation"
@@ -23,7 +23,34 @@ export default function MyMovies() {
                 </div>
             </header>
 
-            <EmptyState />
+            <EmptyState
+                icon={
+                    <FilmSlateIcon
+                        width={45}
+                        height={45}
+                        color="var(--color-gray-400)"
+                        aria-hidden="true"
+                    />
+                }
+                message={
+                    <>
+                        Nenhum filme encontrado com <strong>"Filme ABC"</strong>
+                        <br />
+                        Que tal tentar outra busca?
+                    </>
+                }
+                action={
+                    <Button variant="ghost" className="w-auto" aria-label="Limpar termo de busca">
+                        <XIcon
+                            size={20}
+                            color="var(--color-gray-500)"
+                            weight="bold"
+                            aria-hidden="true"
+                        />
+                        Limpar busca
+                    </Button>
+                }
+            />
         </>
     )
 }
